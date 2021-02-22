@@ -12,6 +12,10 @@ app.use(bodyParser.json());
 
 const posts = {};
 
+app.get('/posts', (req, res) => {
+    res.status(200).json(posts);
+});
+
 app.post('/posts', async(req, res) => {
     const id = randomBytes(4).toString('hex');
     const { title } = req.body;
@@ -21,7 +25,7 @@ app.post('/posts', async(req, res) => {
         title
     };
 
-    await axios.post('http://127.0.0.1:4005/events', {
+    await axios.post('http://event-bus-srv:4005/events', {
         type: 'PostCreated',
         data: { id, title } //using shorthand
     })

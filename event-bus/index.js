@@ -12,10 +12,10 @@ const events = [];
 app.post('/events', (req, res) => {
     const event = req.body;
     events.push(event);
-    axios.post('http://127.0.0.1:4000/events', event);
-    axios.post('http://127.0.0.1:4001/events', event);
-    axios.post('http://127.0.0.1:4002/events', event);
-    axios.post('http://127.0.0.1:4003/events', event);
+    axios.post('http://posts-clusterip-srv/events', event);
+    // axios.post('http://127.0.0.1:4001/events', event);
+    // axios.post('http://127.0.0.1:4002/events', event);
+    // axios.post('http://127.0.0.1:4003/events', event);
 
     res.status(200).json({ status: 'OK' });
 });

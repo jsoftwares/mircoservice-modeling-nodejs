@@ -4,7 +4,7 @@
     "description": "Simple event bus for publish data to different services",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon index.js"
+        "start": "node index.js"
     },
     "author": "Jeffrey Onochie",
     "license": "ISC",
